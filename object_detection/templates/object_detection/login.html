@@ -1,0 +1,12 @@
+{% extends "object_detection/base.html" %}
+
+{% block content %}
+<b style="font-size:30px; color:red;">Авторизация</b>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <button type="submit">Войти</button>
+</form>
+<a href="{% url 'object_detection:register' %}">Регистрация</a>
+{% endblock %}
+

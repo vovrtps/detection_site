@@ -1,11 +1,21 @@
 {% extends "object_detection/base.html" %}
 {% load static %}
 {% block content %}
-<div class="inner"  style="background-image: url({% static 'img/pig.jpg' %}); width:1200px;height:600px;">
-<h1 style="font-size:70px; text-align:center; color:blue;">Добро пожаловать на платформу распознания объектов</h1>
+<head>
+    <style>
+        body{
+            background-image: url({% static 'img/pig.jpg' %});
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
 
-<p  style="text-align:center; color:red;" >
-    <a href="{% url 'object_detection:dashboard' %}" style="color:red; background-color:Lime;">Перейти к панели управления</a>
-</p>
-</div>
+<h1 style="font-size:70px; text-align:center; color:blue;">Добро пожаловать на платформу распознания объектов</h1>
+    <div  style="text-align:center;">
+        <a href="{% url 'object_detection:dashboard' %}" >
+            <button class="btn btn-success" >Перейти к панели управления</button>
+        </a>
+    </div>
+
 {% endblock %}
